@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Axios</title>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="getData">목록 가져오기</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+	<script>
+		new Vue({
+			el : '#app',
+			methods : {
+				getData : function () {
+					axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
+					.then(function (response) {
+						console.log(response);
+					})
+					.catch(function () {
+						console.log(response);
+					});
+				}
+			}
+		})
+		Vue.config.devtools = true;
+	</script>
+</body>
+</script>
+</body>
+</html>
